@@ -19,7 +19,7 @@ const db = low(adapter);
 
 db.defaults({ histoires: [], xp: []}).write()
 
-const token = 'NjMwMTMxMDYxNjU3MDQyOTQ1.XeGRSA.izMGS9CjqMEqe1ubJxF2Ck0dRrU';
+const token = '';
 
 const youtube = new YouTube("AIzaSyBBsW9okzru9y_s0322DcFlUK_DlO6QmN0")
 
