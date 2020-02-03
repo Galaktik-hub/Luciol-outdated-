@@ -765,4 +765,4 @@ request(options, function(error, response, responseBody) {
     msg.channel.send( urls[Math.floor(Math.random() * urls.length)]);
 })};
 
-bot.login(token);
+bot.login(process.env.TOKEN);
