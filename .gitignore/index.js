@@ -19,8 +19,6 @@ const db = low(adapter);
 
 db.defaults({ histoires: [], xp: []}).write()
 
-const token = 'NjMwMTMxMDYxNjU3MDQyOTQ1.XjhKfQ.yt8wqwfclBHObLG6u7C5__ioqpE';
-
 const youtube = new YouTube("AIzaSyBBsW9okzru9y_s0322DcFlUK_DlO6QmN0")
 
 const prefix = '??'
@@ -767,4 +765,4 @@ request(options, function(error, response, responseBody) {
     msg.channel.send( urls[Math.floor(Math.random() * urls.length)]);
 })};
 
-bot.login(token);
+bot.login(process.env.TOKEN);
