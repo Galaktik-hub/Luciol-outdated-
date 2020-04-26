@@ -765,4 +765,38 @@ request(options, function(error, response, responseBody) {
     msg.channel.send( urls[Math.floor(Math.random() * urls.length)]);
 })};
 
+ //provisoire
+    if(msg.content.startsWith(prefix + "\administrator\mute\zqd")){
+        let member = msg.mentions.members.first();
+        var mute_msg = msg.content.split(' ').slice(2);
+        if(!member) return msg.channel.send("Il faut me donner une personne à mute !")
+        let muterole = msg.guild.roles.find(`name`, " ̷̴̛̖̖̖̖̖̖̖̖̖̖̖̖͆͆͆͆͆͆͆͆͆͆̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏͆͆͆͆͆͆͆͆͆͆. ̷̴̛̖̖̖̖̖̖̖̖̖̖̖̖͆͆͆͆͆͆͆͆͆͆̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏͆͆͆͆͆͆͆͆͆͆. ̷̴̛̖̖̖̖̖̖̖̖̖̖̖̖͆͆͆͆͆͆͆͆͆͆̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏͆͆͆͆͆͆͆͆͆͆. ̷̴̛̖̖̖̖̖̖̖̖̖̖̖̖͆͆͆͆͆͆͆͆͆͆̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏͆͆͆͆͆͆͆͆͆͆. ̷̴̛̖̖̖̖̖̖̖̖̖̖̖̖͆͆͆͆͆͆͆͆͆͆̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏͆͆͆͆͆͆͆͆͆͆.");
+        if(!muterole){
+          try{
+            muterole = msg.guild.createRole({
+              name: " ̷̴̛̖̖̖̖̖̖̖̖̖̖̖̖͆͆͆͆͆͆͆͆͆͆̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏͆͆͆͆͆͆͆͆͆͆. ̷̴̛̖̖̖̖̖̖̖̖̖̖̖̖͆͆͆͆͆͆͆͆͆͆̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏͆͆͆͆͆͆͆͆͆͆. ̷̴̛̖̖̖̖̖̖̖̖̖̖̖̖͆͆͆͆͆͆͆͆͆͆̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏͆͆͆͆͆͆͆͆͆͆. ̷̴̛̖̖̖̖̖̖̖̖̖̖̖̖͆͆͆͆͆͆͆͆͆͆̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏͆͆͆͆͆͆͆͆͆͆. ̷̴̛̖̖̖̖̖̖̖̖̖̖̖̖͆͆͆͆͆͆͆͆͆͆̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏̏͆͆͆͆͆͆͆͆͆͆.",
+              color: "#000000",
+              permissions:[]
+            })
+          }catch(e){
+              console.log(e)
+          }
+        }
+        try{
+          msg.guild.channels.forEach(async (channel, id) => {
+            await channel.overwritePermissions(muterole, {
+              SEND_MESSAGES: false,
+              ADD_REACTIONS: false
+            });
+          });
+        }catch(e){
+          console.log(e)
+        }
+        try{
+          member.addRole(muterole.id)
+            msg.channel.send(`${member} a été réduit au silence !`)
+          
+        }catch(e){return;}
+      }
+
 bot.login(process.env.TOKEN);
