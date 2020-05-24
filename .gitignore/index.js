@@ -1,5 +1,4 @@
 const Discord = require ('discord.js');
-const token = 'NjMwMTMxMDYxNjU3MDQyOTQ1.Xj1x3g.fkwxM_0OdAML8z3gnHDcqMwfXgw';
 const ms = require("ms")
 const moment = require("moment");
     moment.locale("fr");
