@@ -472,8 +472,6 @@ bot.on('message' , async msg =>{
         "🔮 - **Tu me dérange là...**",
         "🔮 - **Oh que non !**",
         "🔮 - **Oh que oui !**",
-        "🔮 - **Oh que non !**",
-        "🔮 - **Oh que oui !**",
         "🔮 - **Sûrement pas !**",
         "🔮 - **Probablement :thinking:**",
         "🔮 - **Je sais pas va demander à Jean-Pierre ou à mon esclave**",
