@@ -20,7 +20,7 @@ const db = low(adapter);
 
 db.defaults({ histoires: [], xp: []}).write()
 
-const youtube = new YouTube("AIzaSyBBsW9okzru9y_s0322DcFlUK_DlO6QmN0")
+const youtube = new YouTube("AIzaSyCMCb2DRLONt7pUCmeeFj9laoQJnqIaqto")
 
 const prefix = '??'
 
