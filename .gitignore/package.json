@@ -12,7 +12,7 @@
     "cheerio": "^1.0.0-rc.3",
     "discord-anti-spam": "^2.0.4",
     "discord-giveaway": "^3.0.0",
-    "discord-giveaways": "^2.3.0",
+    "discord-giveaways": "^4.1.8",
     "discord.js": "^11.5.1",
     "lowdb": "^1.0.0",
     "moment": "^2.24.0",
