@@ -213,12 +213,13 @@ bot.on('message' , async msg =>{
     msg.channel.send(embed)
     }
     //donation
-    if(msg.content.startsWith(prefix + "donation"))
+    if(msg.content.startsWith(prefix + "donation")) {
         const embed = new Discord.RichEmbed()
         .setColor("RANDOM")
         .addField("💸 ● __Pourquoi faire des donations ?__","En faisant une donation, vous m'encouragez à continuer de développer mon bot et de faire de meilleurs commandes de jours en jour. Grâce à vous, mon bot a grandi et continuera de grandir. De plus, en me faisant une donation, je pourrai me payer un meilleur héberegeur que celui que j'ai actuellement :)")
         .addField("🔗 **● Lien de mon PayPal:**","[__**[Lien Paypal](https://paypal.me/luciolbot)**__]")
     msg.channel.send(embed)
+    }
     //ping
     if(msg.content.startsWith(prefix + "ping")) {
         const embed = new Discord.RichEmbed()
